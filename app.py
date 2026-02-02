@@ -1,5 +1,5 @@
-from dotenv import load_dotenv
-load_dotenv()
+#from dotenv import load_dotenv
+#load_dotenv()
 
 import streamlit as st
 import google.generativeai as genai 
@@ -69,5 +69,6 @@ if submit:
     response=get_gemini_response(input_prompt,image_date)
     st.subheader("The Response is")
     st.write(response)
+
 
     
