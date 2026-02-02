@@ -1,6 +1,19 @@
 #from dotenv import load_dotenv
 #load_dotenv()
 
+import os
+import streamlit as st
+import google.generativeai as genai
+from PIL import Image
+
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+if not GOOGLE_API_KEY:
+    st.error("GOOGLE_API_KEY is missing. Add it in Hugging Face Secrets.")
+    st.stop()
+
+genai.configure(api_key=GOOGLE_API_KEY)
+
+
 import streamlit as st
 import google.generativeai as genai 
 import os
@@ -72,3 +85,4 @@ if submit:
 
 
     
+
